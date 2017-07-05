@@ -1,0 +1,382 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Just Once</title>
+        <link type="text/css" rel="stylesheet" href="css/main.css" />
+        <link type="text/css" rel="stylesheet" href="css/hover.css" />
+        <link rel="stylesheet" type="text/css" href="jQuerySlider/css/SlideShow.css">
+    </head>
+
+    <body>
+        <!-- logo 首页 题库 求职  讨论区  搜索 登录注册 -->
+        <nav>
+            <div id="navContent">
+                <ul>
+                    <li id="nav_logo"><a href="#" style="color: #fff;">Just Once</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="Tree/Tree.php" target="_blank">题库</a></li>
+                    <li><a href="#">求职</a></li>
+                    <li><a href="./discuss.html">讨论</a></li>
+                </ul>
+                <div id="nav_right">
+                    <a href="#">搜索</a>
+                    <input type="text">
+                    <a href="login.html"><button> 登录/注册</button></a>
+                </div>
+            </div>
+        </nav>
+		
+		<!--侧边栏-->
+        <div id="sidebar">
+            <ul>
+                <li class="sidebar_l"><a href="#bg">专项练习</a></li>
+                <li class="sidebar_l"><a href="#zhenti">面试真题</a></li>
+                <li class="sidebar_l"><a href="#zhuanti">精华专题</a></li>
+                <li class="sidebar_l"><a href="#Discuss">讨论区域</a></li>
+            </ul>
+        </div>
+        <!-- 轮播图 -->
+        <div id="SlideshowPanel">
+            <center>
+                <div id="SlideshowPic">
+                    <a href="#"><img src="images/SlideShow1.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow2.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow3.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow4.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow5.jpg" /></a>
+                </div>
+            </center>		
+        </div>
+
+        <div id="bg">
+			<!--<div id="content_title">
+				<h3>专项练习</h3>
+				<p>我们将对你的职业技能进行评估，给出属于你的专项练习，提高你的专业水平</p>
+			</div>-->
+	    	<div id="inner_type_img">
+				<div class="type_imgs" id="type_img1">
+					<p>专项练习</p>
+				</div>
+				<div class="type_imgs" id="type_img2">
+					<p>真题+模考</p>
+				</div>
+				<div class="type_imgs" id="type_img3">
+					<p><a href="test/test.php" target="_blank">经典专题练习</a></p>
+				</div>
+	   	   </div>
+		</div>
+
+		<!--分类-->
+        <div id="content">
+            <h1>能力测评</h1>
+            <hr>
+            <div id="content_ul">
+                <ul>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background: linear-gradient(#ff2e51,#ffcbd1);"> <p style="color: white;">
+                                <b>HTML</b><br/>聚集了全网最全的HTML面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#1198d6,#c3e5f4);"><p style="color: white;">
+                                 <b>CSS</b><br/>聚集了全网最全的CSS面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#01b43d,#adecc7);"><p style="color: white;">
+                                <b>Javascript</b><br/>聚集了全网最全的Javascript面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#4c61c0,#c8d0ec);"><p style="color: white;">
+                                <b>DOM</b><br/>聚集了全网最全的DOM面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#4c61c0,#c8d0ec);"><p style="color: white;">
+                                <b>Jquery</b><br/>聚集了全网最全的Jquery面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#01b43d,#adecc7);"><p style="color: white;">
+                                <b>PHP</b><br/>聚集了全网最全的PHP面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#1198d6,#c3e5f4);"><p style="color: white;">
+                                <b>JSON</b><br/>聚集了全网最全的JSON面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background: linear-gradient(#ff2e51,#ffcbd1);"> <p style="color: white;">
+                                <b>AJAX</b><br/>聚集了全网最全的AJAX面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+		<!--真题-->
+        <div id="zhenti">
+            <div class="show">
+                <h2><a href="#">阿里巴巴真题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#">说说Hashtable与HashMap的区别(源代码级别)</a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;">
+                    详解：1.最明显的区别在于Hashtable 是同步的(每个方法都是synchronized)，而HashMap则不是. 2.HashMap继承至AbstractMap,Hashtable继承至Dictionary ,前者为Map的骨干， 其内部已经实现了Map所需要做的大部分工作，它的子类只需要实现它的少量方法即可具有Map的多项特性。而后者内部都为抽象方法，需要它的实现类一一作自己的实现，且该类已过时
+                </p>
+                <div class="show_pr"><span>阅读量：354</span><span>赞：210</span><span>评论：40</span><span>收藏：20</span></div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+        </div>
+        <!--专题-->
+        <div id="zhuanti">
+            <!--html-->
+            <div class="show">
+                <h2><a href="#">HTML面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <div class="show_subject">
+                    <a href="#" id="html_title1"></a>
+                    <a class="detailed" onclick="detailed(this)">[详解]</a>
+                    <p style="display: none;" id="html_detailed1"></p>
+                    <div class="show_pr"><span id="html_reading1"></span><span id="html_like1">赞：</span><span>评论：40</span><span id="html_collect1">收藏：</span></div>
+                </div>
+                <div class="show_subject">
+                  <a href="#" id="html_title2"></a>
+                    <a class="detailed" onclick="detailed(this)">[详解]</a>
+                    <p style="display: none;" id="html_detailed2"></p>
+                    <div class="show_pr"><span id="html_reading2">阅读量：</span><span id="html_like2">赞：</span><span>评论：40</span><span id="html_collect2">收藏：</span></div>
+                </div>
+                <div class="show_last"><input type="button" id="html5_flash" class="flash" value="刷新"></input></div>
+            </div>
+            <!--css-->
+            <div class="show">
+                <h2><a href="#">CSS面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#" id="css_title1"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="css_detailed1"></p>
+                <div class="show_pr"><span id="css_reading1"></span><span id="css_like1"></span><span>评论：40</span><span id="css_collect1"></span></div>
+                <a href="#" id="css_title2"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="css_detailed2"></p>
+                <div class="show_pr"><span id="css_reading2"></span><span id=
+                "css_like2"></span><span>评论：40</span><span id="css_collect2"></span></div>
+                <div class="show_last"><input type="button" id="css3_flash" class="flash" value="刷新"></input></div>
+            </div>
+            <!--//javascript-->
+            <div class="show">
+                <h2><a href="#">JAVASCRIPT面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#" id="js_title1"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="js_detailed1"></p>
+                <div class="show_pr"><span id="js_reading1"></span><span id="js_like1"></span><span>评论：40</span><span id="js_collect1"></span></div>
+                <a href="#" id="js_title2"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="js_detailed2"></p>
+                <div class="show_pr"><span id="js_reading2"></span><span id="js_like2"></span><span>评论：40</span><span id="js_collect2"></span></div>
+                <div class="show_last"><input type="button" id="javascript_flash" class="flash" value="刷新"></input></div>
+            </div>
+            <!--php-->
+            <div class="show">
+                <h2><a href="#">PHP面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#" id="php_title1"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="php_detailed1"></p>
+                <div class="show_pr"><span id="php_reading1"></span><span id="php_like1"></span><span>评论：40</span><span id="php_collect1"></span></div>
+                <a href="#" id="php_title2"></a><a class="detailed" onclick="detailed(this)">[详解]</a>
+                <p style="display: none;" id="php_detailed2"></p>
+                <div class="show_pr"><span id="php_reading2"></span><span id="php_like2"></span><span>评论：40</span><span id="php_collect2"></span></div>
+                <div class="show_last"><input type="button" id="php_flash" class="flash" value="刷新"></input></div>
+            </div>
+        </div>
+		<!--页脚-->
+        <div id="footer">
+            <div id="wrap_foot">
+                <div class="foot_left">
+                    <img src="images/qq.jpg" alt="picture">
+                </div>
+                <div class="foot_center">
+                    <span>业务QQ：2665752129</span><br/>
+                    <span>微信：justOnce<a>关注</a></span><br/>
+                    <span>博客：justOnce<a>关注</a></span><br/>
+                </div>
+                <div class="foot_right">
+                    <div class="footer_contact">
+                        <a href="">关于我们</a>
+                        <a href="">加入我们</a><br/>
+                        <a href="">意见反馈</a>
+                        <a href="">企业服务</a><br/>
+                        <a href="">网站合作</a>
+                        <a href="">免责申明</a><br/>
+                        <a href="">友情链接</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<!--回到头部-->
+        <div id="toTop">
+            <a href="#" id="Top"></a>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="js\jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="jQuerySlider/js/vmc.slider.full.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/hover.js"></script>
+
+    <script>
+        //开始时加载一次
+        flash_html5();
+        flash_css3();
+        flash_js();
+        flash_php();
+
+        $(".flash").click(function(){
+            switch($(this).attr("id")){
+                case "html5_flash":
+                    flash_html5();
+                break;
+                case "css3_flash":
+                    flash_css3();
+                break;
+                case "javascript_flash":
+                    flash_js();
+                break;
+                case "php_flash":
+                    flash_php();
+                break;
+            }
+        });
+        
+        function flash_html5(){
+            $.post("./php/mian.php",{"type":"html5"},
+                function(data){
+                    var result = eval("("+data+")");
+                    console.log(result);
+                    $("#html_title1").html(result[0]["Title"]);
+                    $("#html_detailed1").html(result[0]["Detailed"]);
+                    $("#html_reading1").html("阅读量："+result[0]["Reading"]);
+                    $("#html_like1").html("赞："+result[0]["Like"]);
+                    $("#html_collect1").html("收藏"+result[0]["Collect"]);
+                    $("#html_title2").html(result[1]["Title"]);
+                    $("#html_detailed2").html(result[1]["Detailed"]);
+                    $("#html_reading2").html("阅读量："+result[1]["Reading"]);
+                    $("#html_like2").html("赞："+result[1]["Like"]);
+                    $("#html_collect2").html("收藏"+result[1]["Collect"]);
+            });
+        }
+
+        function flash_css3(){
+                $.post("./php/mian.php",{"type":"css3"},
+                    function(data){
+                        var result = eval("("+data+")");
+                        console.log(result);
+                        $("#css_title1").html(result[0]["Title"]);
+                        $("#css_detailed1").html(result[0]["Detailed"]);
+                        $("#css_reading1").html("阅读量："+result[0]["Reading"]);
+                        $("#css_like1").html("赞："+result[0]["Like"]);
+                        $("#css_collect1").html("收藏"+result[0]["Collect"]);
+                        $("#css_title2").html(result[1]["Title"]);
+                        $("#css_detailed2").html(result[1]["Detailed"]);
+                        $("#css_reading2").html("阅读量："+result[1]["Reading"]);
+                        $("#css_like2").html("赞："+result[1]["Like"]);
+                        $("#css_collect2").html("收藏"+result[1]["Collect"]);
+                });
+            }
+
+
+
+        function flash_js(){
+                $.post("./php/mian.php",{"type":"javascript"},
+                    function(data){
+                        var result = eval("("+data+")");
+                        console.log(result);
+                        $("#js_title1").html(result[0]["Title"]);
+                        $("#js_detailed1").html(result[0]["Detailed"]);
+                        $("#js_reading1").html("阅读量："+result[0]["Reading"]);
+                        $("#js_like1").html("赞："+result[0]["Like"]);
+                        $("#js_collect1").html("收藏"+result[0]["Collect"]);
+                        $("#js_title2").html(result[1]["Title"]);
+                        $("#js_detailed2").html(result[1]["Detailed"]);
+                        $("#js_reading2").html("阅读量："+result[1]["Reading"]);
+                        $("#js_like2").html("赞："+result[1]["Like"]);
+                        $("#js_collect2").html("收藏"+result[1]["Collect"]);
+                });
+        }
+
+        function flash_php(){
+                $.post("./php/mian.php",{"type":"php"},
+                    function(data){
+                        var result = eval("("+data+")");
+                        console.log(result);
+                        $("#php_title1").html(result[0]["Title"]);
+                        $("#php_detailed1").html(result[0]["Detailed"]);
+                        $("#php_reading1").html("阅读量："+result[0]["Reading"]);
+                        $("#php_like1").html("赞："+result[0]["Like"]);
+                        $("#php_collect1").html("收藏"+result[0]["Collect"]);
+                        $("#php_title2").html(result[1]["Title"]);
+                        $("#php_detailed2").html(result[1]["Detailed"]);
+                        $("#php_reading2").html("阅读量："+result[1]["Reading"]);
+                        $("#php_like2").html("赞："+result[1]["Like"]);
+                        $("#php_collect2").html("收藏"+result[1]["Collect"]);
+                });
+        }
+
+    </script>
+    </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+	<title>登录Just Once</title>
+</head>
+<body>
+	<!-- 登录的背景 -->
+	<div class="cover_bg" id="warp_login"></div>
+		<!-- 登录/注册框 -->
+		<div id="form_box">
+			<h2>Just Once</h2>
+			<a href="index.php">&times;</a>
+			<!-- 用来切换登录、注册的区域 -->
+			<p class="form_change" ><span class="form_bm" onclick="form_change(1)">登录</span><span onclick="form_change(2)">注册</span></p>
+			<div class="divhr"></div>
+			<!-- 登录 -->
+			<form action="php/login.php" method="POST" id="Just_go">
+				<div class="user">
+					<label for="" class="png _user">手机号</label>
+					<input type="text" name="user" placeholder="手机号" autofocus required>
+				</div>
+				<div class="pwd">
+					<label for="" class="png _pwd">密码</label>
+					<input type="password" name="pwd" placeholder="密码" required>
+				</div>
+				<button type="submit">登录</button>	
+				<div class="forget_pwd"><a href="">忘记密码？</a></div>
+				<p>其他登录方式</p>	
+				<!-- <div class="divhr"></div> -->
+				<div class="log_other">
+					<a href=""><img src="images/QQ.jpg" alt="QQ"/></a>
+					<a href=""><img src="images/weixin.jpg" alt="微信"/></a>
+					<a href=""><img src="images/weibo.jpg" alt="微博"/></a>
+				</div>
+			</form>
+			<!-- 注册 -->
+			<form action="php/join.php" method="POST" id="Just_join">
+				<div class="user">
+					<label for="" class="png _user">手机号</label>
+					<input type="text" name="user" placeholder="手机号" autofocus required pattern="^[0-9]{11}$">
+				</div>
+				<div class="pwd">
+					<label for="" class="png _pwd">密码</label>
+					<input type="password" name="pwd" placeholder="请输入密码" required pattern="^[0-9a-zA-Z]{6,12}$">
+				</div>
+				<div class="pwd2">
+					<label for="" class="png _pwd">确认密码</label>
+					<input type="password" name="repwd" placeholder="确认密码" required pattern="^[0-9a-zA-Z]{6,12}$">
+				</div>
+				<button type="submit">注册</button>
+			</form>
+			<!--浏览器兼容  登录、注册切换 -->
+			<script type="text/javascript">
+				//火狐判断
+				(function(){
+					var divhr = document.getElementsByClassName('divhr')[0];
+					var form_box=document.getElementById('form_box');
+					var agent = navigator.userAgent.toLowerCase();
+					var regStr_ff = /firefox\/[\d.]+/gi
+					//firefox
+					if(agent.indexOf("firefox")>0)
+					{
+						form_box.style.height="316"+"px";
+						divhr.style.marginTop="5"+"px";
+					}
+				})();
+				// 登录、注册切换
+				function form_change(n){
+					var form1=document.getElementById('Just_go');
+					var form2=document.getElementById('Just_join');
+					var spans=document.querySelectorAll("#form_box .form_change span");
+					if(n==1){
+						form1.style.display="block";
+						spans[0].className="form_bm";
+						form2.style.display="none";
+						spans[1].className="";
+					}
+					if(n==2){
+						form1.style.display="none";
+						spans[0].className="";
+						form2.style.display="block";
+						spans[1].className="form_bm";
+					}
+				}
+				//注册时的密码判断
+				/*用户名*/
+				var user=document.querySelector("#Just_join input[name='user']");
+				console.log(user);
+				user.onblur=function(){
+					if(user.validity.patternMismatch){
+						user.setCustomValidity("用户名输入错误");
+					}else if(user.validity.valueMissing){
+						user.setCustomValidity("用户名不能为空");
+					}else if(user.value!=""&&user.value!=null){
+						user.setCustomValidity("");
+					}
+				};
+				/*密码*/
+				var pwd=document.querySelector("#Just_join input[name='pwd']");
+				console.log(pwd);
+				pwd.onblur=function(){
+					if(pwd.validity.valueMissing){
+						pwd.setCustomValidity("密码不能为空");
+					}else if(pwd.validity.patternMismatch){
+						pwd.setCustomValidity("密码格式错误");
+					}else if(pwd.value!=""&&pwd.value!=null){
+						pwd.setCustomValidity("");
+					}
+				};
+				/*再次输入密码*/
+				var repwd=document.querySelector("#Just_join input[name='repwd']");
+				repwd.onblur=function(){
+					if(repwd.validity.valueMissing){
+						repwd.setCustomValidity("密码不能为空");
+					}else if(repwd.validity.patternMismatch){
+						repwd.setCustomValidity("密码格式错误");
+					}else if(repwd.value!=pwd.value){
+						repwd.setCustomValidity("两次输入密码不一致");
+					}else if(repwd.value!=""&&repwd.value!=null){
+						repwd.setCustomValidity("");
+					}
+				};
+			</script>
+		</div>
+	
+</body>
+</html>

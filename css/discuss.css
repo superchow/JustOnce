@@ -1,0 +1,40 @@
+body{background: #f1f2f6;}
+
+#Discuss_content{width: 1100px;margin-top: 50px;margin: 0 auto;}
+
+#Discuss{width: 760px; float: left; margin-top: 60px;background: #fff; padding: 10px;}
+
+#Discuss_title>hr{margin-bottom: 20px;}
+
+.dis_question{padding-bottom: 20px;}
+
+#Discuss_title{margin-top: 10px;}
+
+#Discuss_title a{text-decoration: none;color: #999;margin-right: 30px;font-size: 20px;}
+
+#Discuss_title a:hover{color: #e4393c;}
+
+.dis_ques_title img{width: 60px;height: 60px;float: left;}
+
+.dis_ques_title span{font-size: 10px;margin-left: 10px;}
+
+.dis_ques_title p{font-size: 15px;margin-left: 10px;font-weight: bold;display: inline-block;}
+
+.dis_ques_answer{margin-left: 70px;}
+
+.dis_ques_answer a{text-decoration: none;margin-right: 10px;color: #999;font-size: 14px;}
+
+.dis_ques_answer a:hover{color: #e4393c;}
+
+/*右边的板块*/
+#Discuss_rightPanel{width:300px;float:right;margin-top: 60px;}
+
+#Discuss_userPanel{width: 300px;padding: 10px;background-color: #fff;line-height: 60px;vertical-align: middle;}
+
+#Discuss_userPanel button{width: 300px;height: 40px;background: #0DBBA1;border: none;border-radius: 8px;font-size: 18px;outline: none;}
+
+#Discuss_userPanel ul{list-style: none;}
+
+#Discuss_userPanel li{list-style: none;display: block;line-height: 30px;margin-left: 10px;color: #666;}
+
+#Discuss_userPanel li:hover{color: #0dbba1;}

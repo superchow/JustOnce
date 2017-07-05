@@ -1,0 +1,451 @@
+<?php
+	include("db/db.php");
+	$html_db = new DB("jo_html");
+	$ajax_db = new DB("jo_ajax");
+	$asp_db = new DB("jo_asp.net");
+	$css_db = new DB("jo_css3");
+	$js_db = new DB("jo_javascript");
+	$jq_db = new DB("jo_jquery");
+	$php_db = new DB("jo_php");
+	$xml_db = new DB("jo_xml");
+
+	//html---随机选出两道面试题
+	$ht_count=mysqli_query($html_db->conn,"select ID from jo_html5");
+	if($ht_count->num_rows != 0){
+		$num = rand2($ht_count->num_rows)[0];
+		$html_result1 = $html_db->find("select * from jo_html5 where ID = $num");
+		$num = rand2($ht_count->num_rows)[1];
+		$html_result2 = $html_db->find("select * from jo_html5 where ID = $num");
+	}
+	else{
+		$html_result1= null;
+		$html_result2= null;
+	}
+	
+
+
+	//css---随机选出两道面试题
+	$css_count=mysqli_query($css_db->conn,"select ID from jo_css3");
+	if($css_count->num_rows != 0){
+		$num = rand2($css_count->num_rows)[0];
+		$css_result1 = $css_db->find("select * from jo_css3 where ID = $num");
+		$num = rand2($css_count->num_rows)[1];
+		$css_result2 = $css_db->find("select * from jo_css3 where ID = $num");
+	}
+	else{
+		$css_result1= null;
+		$css_result2= null;
+	}
+
+
+	// //js---随机选出两道面试题
+	$js_count=mysqli_query($js_db->conn,"select ID from jo_javascript");
+	if($js_count->num_rows != 0){
+		$num = rand2($js_count->num_rows)[0];
+		$js_result1 = $js_db->find("select * from jo_javascript where ID = $num");
+		$num = rand2($js_count->num_rows)[1];
+		$js_result2 = $js_db->find("select * from jo_javascript where ID = $num");
+	}
+	else{
+		$js_result1= null;
+		$js_result2= null;
+	}
+	
+
+
+	// //php---随机选出两道面试题
+	$php_count=mysqli_query($php_db->conn,"select ID from jo_php");
+	if($php_count->num_rows != 0){
+		$num = rand2($php_count->num_rows)[0];
+		$php_result1 = $php_db->find("select * from jo_php where ID = $num");
+		$num = rand2($php_count->num_rows)[1];
+		$php_result2 = $php_db->find("select * from jo_php where ID = $num");
+	}
+	else{
+		$php_result1= null;
+		$php_result2= null;
+	}
+
+
+	// 产生两个不一样的随机数
+	function rand2($count){
+		$ranNum = Array();
+		$num1=0;
+		$num2=0;
+		do{
+			$num1 = rand(1,$count);
+			$num2 = rand(1,$count);
+		}while($num1==$num2);
+		$ranNum[] = $num1;
+		$ranNum[] = $num2;
+		// print_r($ranNum);
+		return $ranNum;
+	}
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <title>Just Once</title>
+        <link type="text/css" rel="stylesheet" href="css/main.css" />
+        <link type="text/css" rel="stylesheet" href="css/hover.css" />
+        <link rel="stylesheet" type="text/css" href="jQuerySlider/css/SlideShow.css">
+    </head>
+
+    <body>
+        <!-- logo 首页 题库 求职  讨论区  搜索 登录注册 -->
+        <nav>
+            <div id="navContent">
+                <ul>
+                    <li id="nav_logo"><a href="#" style="color: #fff;">Just Once</a></li>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">题库</a></li>
+                    <li><a href="#">求职</a></li>
+                    <li><a href="#">讨论</a></li>
+                </ul>
+                <div id="nav_right">
+                    <a href="#">搜索</a>
+                    <input type="text">
+                    <button>登录/注册</button>
+                </div>
+            </div>
+        </nav>
+
+        <!--侧边栏-->
+        <div id="sidebar">
+            <ul>
+                <li class="sidebar_l"><a href="#bg">专项练习</a></li>
+                <li class="sidebar_l"><a href="#zhenti">面试真题</a></li>
+                <li class="sidebar_l"><a href="#zhuanti">精华专题</a></li>
+                <li class="sidebar_l"><a href="#Discuss">讨论区域</a></li>
+            </ul>
+        </div>
+        <!--轮播图-->
+        <div id="SlideshowPanel">
+            <center>
+                <div id="SlideshowPic">
+                    <a href="#"><img src="images/SlideShow1.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow2.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow3.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow4.jpg" /></a>
+                    <a href="#"><img src="images/SlideShow5.jpg" /></a>
+                </div>
+            </center>
+        </div>
+
+        <div id="bg">
+            <!--<div id="content_title">
+				<h3>专项练习</h3>
+				<p>我们将对你的职业技能进行评估，给出属于你的专项练习，提高你的专业水平</p>
+			</div>
+		-->
+            <div id="inner_type_img">
+                <div class="type_imgs" id="type_img1">
+                    <p>专项练习</p>
+                </div>
+                <div class="type_imgs" id="type_img2">
+                    <p>真题+模考</p>
+                </div>
+                <div class="type_imgs" id="type_img3">
+                    <p>经典专题练习</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!--分类-->
+        <div id="content">
+            <h3>能力测评</h3>
+            <hr>
+            <div id="content_ul">
+                <ul>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background: linear-gradient(#ff2e51,#ffcbd1);">
+                                <p><b>HTML</b><br/>聚集了全网最全的HTML面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#1198d6,#c3e5f4);">
+                                <p> <b>CSS</b><br/>聚集了全网最全的CSS面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="background:linear-gradient(#01b43d,#adecc7);">
+                                <p><b>Javascript</b><br/>聚集了全网最全的Javascript面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="">
+                                <p><b>DOM</b><br/>聚集了全网最全的DOM面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="">
+                                <p><b>Jquery</b><br/>聚集了全网最全的Jquery面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="">
+                                <p><b>PHP</b><br/>聚集了全网最全的PHP面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="">
+                                <p><b>JSON</b><br/>聚集了全网最全的JSON面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="spbq">
+                            <div class="biankuang biankuang_1"></div>
+                            <div class="biankuang biankuang_2"></div>
+                            <div class="biankuang biankuang_3"></div>
+                            <div class="biankuang biankuang_4"></div>
+                            <div class="zst" style="">
+                                <p><b>AJAX</b><br/>聚集了全网最全的AJAX面试题</p>
+                            </div>
+                            <div class="text_gobuy">立即测评</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--真题-->
+        <div id="zhenti">
+            <div class="show">
+                <h2><a href="#">阿里巴巴真题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#">说说Hashtable与HashMap的区别(源代码级别)</a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    详解：1.最明显的区别在于Hashtable 是同步的(每个方法都是synchronized)，而HashMap则不是. 2.HashMap继承至AbstractMap,Hashtable继承至Dictionary ,前者为Map的骨干， 其内部已经实现了Map所需要做的大部分工作，它的子类只需要实现它的少量方法即可具有Map的多项特性。而后者内部都为抽象方法，需要它的实现类一一作自己的实现，且该类已过时
+                </p>
+                <div class="show_pr"><span>阅读量：354</span><span>赞：210</span><span>评论：40</span><span>收藏：20</span></div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+        </div>
+        <!--专题-->
+        <div id="zhuanti">
+            <div class="show">
+                <h2><a href="#">HTML面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <div class="show_subject">
+                    <a href="#">
+                        <?php echo $html_result1["Title"] ?>
+                    </a><button class="detailed" onclick="detailed(this)">详解</button>
+                    <p style="display: none;">
+                        <?php echo $html_result1["Detailed"]?>
+                    </p>
+                    <div class="show_pr"><span>阅读量：<?php echo $html_result1["Reading"] ?></span><span>赞：<?php echo $html_result1["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $html_result1["Collect"] ?></span></div>
+                </div>
+                <div class="show_subject">
+                    <a href="#">
+                        <?php echo $html_result2["Title"] ?>
+                    </a><button class="detailed" onclick="detailed(this)">详解</button>
+                    <p style="display: none;">
+                        <?php echo $html_result2["Detailed"]?>
+                    </p>
+                    <div class="show_pr"><span>阅读量：<?php echo $html_result2["Reading"] ?></span><span>赞：<?php echo $html_result2["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $html_result2["Collect"] ?></span></div>
+                </div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+            <div class="show">
+                <h2><a href="#">CSS面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#">
+                    <?php echo $css_result1["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $css_result1["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量： <?php echo $css_result1["Reading"] ?></span><span>赞： <?php echo $css_result1["Like"] ?></span><span>评论：40</span><span>收藏： <?php echo $css_result1["Collect"] ?></span></div>
+                <a href="#">
+                    <?php echo $css_result2["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $css_result2["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量：<?php echo $css_result2["Reading"] ?></span><span>赞：<?php echo $css_result2["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $css_result2["Collect"] ?></span></div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+            <div class="show">
+                <h2><a href="#">JAVASCRIPT面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#">
+                    <?php echo $js_result1["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $js_result1["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量：<?php echo $js_result1["Reading"] ?></span><span>赞：<?php echo $js_result1["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $js_result1["Collect"] ?></span></div>
+                <a href="#">
+                    <?php echo $js_result2["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $js_result2["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量：<?php echo $js_result2["Reading"] ?></span><span>赞：<?php echo $js_result2["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $js_result2["collect"] ?></span></div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+            <div class="show">
+                <h2><a href="#">PHP面试题</a><span onclick="exit(this)">X</span></h2>
+                <hr/>
+                <a href="#">
+                    <?php echo $php_result1["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $php_result1["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量：<?php echo $php_result1["Reading"] ?></span><span>赞：<?php echo $php_result1["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $php_result1["Collect"] ?></span></div>
+                <a href="#">
+                    <?php echo $php_result2["Title"] ?>
+                </a><button class="detailed" onclick="detailed(this)">详解</button>
+                <p style="display: none;">
+                    <?php echo $php_result2["Detailed"] ?>
+                </p>
+                <div class="show_pr"><span>阅读量：<?php echo $php_result2["Reading"] ?></span><span>赞：<?php echo $php_result2["Like"] ?></span><span>评论：40</span><span>收藏：<?php echo $php_result2["Collect"] ?></span></div>
+                <div class="show_last"><a href="#">更多...</a></div>
+            </div>
+        </div>
+
+        <!--评论区-->
+        <div id="Discuss_content">
+            <div id="Discuss">
+                <div id="Discuss_logo">
+                    <span>讨论区</span><button>我要提问</button>
+                </div>
+                <div id="Discuss_title">
+                    <a href="">推荐</a>
+                    <a href="">最新</a>
+                    <a href="">等待回答</a>
+                    <hr>
+                </div>
+                <div id="Discuss_question">
+                    <div class="dis_question">
+                        <div class="dis_ques_title">
+                            <img src="images/html_logo.jpg">
+                            <span>来自用户 donggua</span><br>
+                            <p>给父容器div添加点击事件，中间的子div挡住部分触发区域怎么处理？</p>
+                        </div>
+                        <div class="dis_ques_answer">
+                            <a href="">点赞(9)</a><a href="">回答</a>
+                        </div>
+                    </div>
+                    <div class="dis_question">
+                        <div class="dis_ques_title">
+                            <img src="images/php_logo.jpg">
+                            <span>来自用户 jianjian</span><br>
+                            <p>安装wamp后 访问失败，访问localhost出现目录结构 打不开页面？</p>
+                        </div>
+                        <div class="dis_ques_answer">
+                            <a href="">点赞(99+)</a><a href="">回答</a>
+                        </div>
+                    </div>
+                    <div class="dis_question">
+                        <div class="dis_ques_title">
+                            <img src="images/jquery_logo.jpg">
+                            <span>来自用户 zhz</span><br>
+                            <p>jquery版本差别?</p>
+                        </div>
+                        <div class="dis_ques_answer">
+                            <a href="">点赞(32)</a><a href="">回答</a>
+                        </div>
+                    </div>
+                    <div class="dis_question">
+                        <div class="dis_ques_title">
+                            <img src="images/js_logo.jpg">
+                            <span>来自用户 youthKer</span><br>
+                            <p>请问jQuery中的$.方法名的调用方式是怎么实现的呢？？</p>
+                        </div>
+                        <div class="dis_ques_answer">
+                            <a href="">点赞(9)</a><a href="">回答</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--页脚-->
+        <div id="footer">
+            <div id="wrap_foot">
+                <div class="foot_left">
+                    <img src="images/qq.jpg" alt="picture">
+                </div>
+                <div class="foot_center">
+                    <span>业务QQ：2665752129</span><br/>
+                    <span>微信：justOnce<a>关注</a></span><br/>
+                    <span>博客：justOnce<a>关注</a></span><br/>
+                </div>
+                <div class="foot_right">
+                    <div class="footer_contact">
+                        <a href="">关于我们</a>
+                        <a href="">加入我们</a><br/>
+                        <a href="">意见反馈</a>
+                        <a href="">企业服务</a><br/>
+                        <a href="">网站合作</a>
+                        <a href="">免责申明</a><br/>
+                        <a href="">友情链接</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--回到头部-->
+        <div id="toTop">
+            <a href="#" id="Top"></a>
+        </div>
+    </body>
+
+    <script type="text/javascript" src="js\jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="jQuerySlider/js/vmc.slider.full.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/hover.js"></script>
+
+    </html>

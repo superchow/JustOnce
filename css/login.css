@@ -1,0 +1,33 @@
+*{margin:0;padding:0;}
+a{text-decoration:none;}
+	/*登录、注册Just*/
+html{font-size:62.5%;}
+body{font-size:1.4rem;background:url(../images/bg1.png);}
+#form_box{position:relative;top:200px;left:900px;border:1px solid #ccc;width:300px;height:300px;border-radius:15px;background: rgba(255,255,255,0.2);overflow:hidden;}
+#form_box h2{text-align:center;}
+/*关闭按钮*/
+#form_box>a{position:relative;top:-24px;left:280px;text-decoration:none;cursor:pointer;display:inline-block;width:20px;height:20px;text-align:center;}
+#form_box>a:hover{background-color:#83DACD;}
+/*切换登录、注册*/
+#form_box .form_change{width:100%;height:20px;font-size:20px;font-weight:bold;padding:8px 0px 3px;}
+#form_box .form_change span{display:inline-block;width:49%;text-align:center;cursor:pointer;}
+#form_box .form_bm{border-bottom:2px solid blue;}
+/*替代hr的div*/
+#form_box .divhr{width:100%;border-top:2px solid #ddd;}
+/*登录*/      /*注册*/
+#Just_join{display:none;}
+#Just_go{position:relative;}
+#form_box .user,#form_box .pwd,#form_box .pwd2{width:100%;height:40px;margin:10px auto;text-align:center;position:relative;}
+/*      输入框图片         */
+#form_box .png{width:0px;height:38px;position:absolute;overflow:hidden;padding-left:44px;background-repeat:no-repeat;}
+#form_box ._user{background-image:url(../images/user.jpg);}
+#form_box ._pwd{background-image:url(../images/pwd.jpg);}
+#form_box div>input{height:37px;width:200px;padding-left:50px;/*background:no-repeat left;*/border:1px solid #ddd;}
+#form_box button{width:253px;height:35px;margin:0 8%;font-weight:bold;font-size:18px;color:#fff;background-color:blue;border-radius:3px;border:1px solid blue;}
+/*其他登录方式*/
+#Just_go .forget_pwd{margin-top:5px;text-align:right;}
+#Just_go .forget_pwd>a{margin-right:20px;color:blue;font-size:12px;}
+#Just_go>p{text-align:center;padding-bottom:5px;}
+#Just_go .log_other{width:100%;height:35px;text-align:center;}
+#Just_go .log_other>a{display:inline-block;width:35px;height:35px;margin-right:15px;overflow:hidden;}
+#Just_go .divhr{position:relative;top:-8px;z-index:1;}
